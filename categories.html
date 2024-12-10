@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Categories | Bollywood Beats</title>
+  <link rel="icon" href="assets/title.png" type="image/icon type">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <style>
+    /* Custom active navigation button styling */
+    .nav-link.active {
+      background-color: #1DB954; /* Spotify Green */
+    }
+  
+    .nav-pills .nav-link {
+      border-radius: 50px;
+      margin: 0 5px;
+    }
+  
+    /* Ensure images scale consistently across various screen sizes */
+    img.card-img-top {
+      object-fit: cover;
+      height: 200px;
+      width: 100%;
+    }
+  
+    /* Responsive design for better cross-device support */
+    @media (max-width: 768px) {
+      img.card-img-top {
+        height: 150px;
+      }
+    }
+    /* General resets */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    /* Navbar */
+    @media (max-width: 768px) {
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 10px 0;
+      }
+  
+      nav a:hover {
+        color: #64ffda;
+      }
+    }
+  </style>
+  
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Navbar -->
+<!-- Navbar -->
+<nav class="bg-green-800 shadow-md">
+  <div class="container mx-auto flex items-center justify-between py-4 px-6">
+    <a href="#" class="text-2xl font-bold text-white">Bollywood Beats</a>
+    <ul class="flex space-x-6">
+      <li><a href="home.html" class="hover:text-green-400">Home</a></li>
+      <li><a href="categories.html" class="hover:text-green-400">Categories</a></li>
+      <li><a href="artist.html" class="hover:text-green-400">Artists</a></li>
+      <li><a href="about-as.html" class="hover:text-green-400">About Us</a></li>
+    </ul>
+  </div>
+</nav>
+  <!-- Music Categories Tabs -->
+  <section class="py-20" id="categories">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center text-white mb-12" data-aos="fade-down">Top Music Categories</h2>
+      
+      <div class="tabs">
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-topbollywood-tab" data-bs-toggle="pill" href="#pills-topbollywood" role="tab" aria-controls="pills-topbollywood" aria-selected="true" >Top Bollywood Songs</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-lovesongs-tab" data-bs-toggle="pill" href="#pills-lovesongs" role="tab" aria-controls="pills-lovesongs" aria-selected="false">Love Songs</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-sadsongs-tab" data-bs-toggle="pill" href="#pills-sadsongs" role="tab" aria-controls="pills-sadsongs" aria-selected="false">Sad Songs</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-chillsongs-tab" data-bs-toggle="pill" href="#pills-chillsongs" role="tab" aria-controls="pills-chillsongs" aria-selected="false">Chill Songs</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-rocksongs-tab" data-bs-toggle="pill" href="#pills-rocksongs" role="tab" aria-controls="pills-rocksongs" aria-selected="false">Rock Songs</a>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="pills-tabContent">
+          <!-- Top Bollywood Songs Tab -->
+          <div class="tab-pane fade show active" id="pills-topbollywood" role="tabpanel" aria-labelledby="pills-topbollywood-tab">
+            <div class="row">
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/bollywood-top1.jpeg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Khoobsurat</h5>
+                    <p class="card-text">Vishal Mishra, Amitabh Bhattacharya, Sachin–Jigar</p>
+                    <a href="https://www.jiosaavn.com/song/khoobsurat/PyQ5BAJRZmM" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Song Card 2 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/bollywood-top2.jpeg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Bhool Bhulaiyaa 3 - Title Track</h5>
+                    <p class="card-text">Neeraj Shridhar, Pitbull, Pritam Chakraborty, Tanishk Bagchi, Dhrruv Yogi, Diljit Dosanjh, Sameer Anjaan</p>
+                    <a href="https://www.jiosaavn.com/song/bhool-bhulaiyaa-3-title-track/NCcyVThTTVA" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Song Card 3 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/bollywood-top3.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Aaj Ki Raat</h5>
+                    <p class="card-text">Madhubanti Bagchi, Amitabh Bhattacharya, Divya Kumar, Sachin–Jigar</p>
+                    <a href="https://www.jiosaavn.com/song/aaj-ki-raat/IV4HARUADko" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Song Card 4 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/bollywood-top4.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Raanjhan</h5>
+                    <p class="card-text">Parampara Thakur</p>
+                    <a href="https://www.jiosaavn.com/song/raanjhan/Fz8qYCBZDh4" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Song Card 5 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/bollywood-top5.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Millionaire</h5>
+                    <p class="card-text">Yo Yo Honey Singh</p>
+                    <a href="https://www.jiosaavn.com/song/millionaire/I1g,BEAGbmA" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- More Song Cards can follow... -->
+            </div>
+          </div>
+
+          <!-- Love Songs Tab -->
+          <div class="tab-pane fade" id="pills-lovesongs" role="tabpanel" aria-labelledby="pills-lovesongs-tab">
+            <div class="row">
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/love1.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Apna Bana Le</h5>
+                    <p class="card-text">Arijit Singh, Amitabh Bhattacharya, Sachin–Jigar</p>
+                    <a href="https://www.jiosaavn.com/song/apna-bana-le/ATIfejZ9bWw" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/love2.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Sajni</h5>
+                    <p class="card-text">Arijit Singh</p>
+                    <a href="https://www.jiosaavn.com/song/sajni/NipTZjZZYEU" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/love3.webp" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Ve Kamleya</h5>
+                    <p class="card-text">Arijit Singh, Altamash Faridi, Shadab Faridi, Shreya Ghoshal, Amitabh Bhattacharya</p>
+                    <a href="https://www.jiosaavn.com/song/ve-kamleya-from-rocky-aur-rani-kii-prem-kahaani/KQ9YeiVDfkc" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/lov4.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Tujhe Kitna Chahne Lag</h5>
+                    <p class="card-text">Arijit Singh, Mithoon</p>
+                    <a href="https://www.jiosaavn.com/song/tujhe-kitna-chahne-lage/Ow1SZSRjYlU" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/love5.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">O Maahi</h5>
+                    <p class="card-text">Arijit Singh</p>
+                    <a href="https://www.jiosaavn.com/song/o-maahi/BwsYdR1jRHI" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- More Song Cards can follow... -->
+            </div>
+          </div>
+
+          <!-- Sad Songs Tab -->
+          <div class="tab-pane fade" id="pills-sadsongs" role="tabpanel" aria-labelledby="pills-sadsongs-tab">
+            <div class="row">
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/sad1.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">ishq</h5>
+                    <p class="card-text">Faheem Abdullah, Rauhan Malik, Amir Ameer</p>
+                    <a href="https://www.jiosaavn.com/song/ishq/GhBZdkd9XV8" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/sad2.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Shayad</h5>
+                    <p class="card-text">Madhubanti Bagchi, Arijit Singh, Pritam Chakraborty</p>
+                    <a href="https://www.jiosaavn.com/song/shayad/LxohXBZ7ZGM" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/sad3.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">O Bedardeya</h5>
+                    <p class="card-text">Arijit Singh</p>
+                    <a href="https://www.jiosaavn.com/song/o-bedardeya/Az5ZcgFVRFY" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/sad4.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Kahani Suno 2.0</h5>
+                    <p class="card-text">Kaifi Khalil</p>
+                    <a href="https://www.jiosaavn.com/song/kahani-suno-2.0/BQsfBEBCeWc" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/sad5.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Husn</h5>
+                    <p class="card-text"> Anuv Jain</p>
+                    <a href="https://www.jiosaavn.com/song/husn/KFgRSTx4UUA" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- More Song Cards can follow... -->
+            </div>
+          </div>
+
+                    <!-- Sad Songs Tab -->
+          <div class="tab-pane fade" id="pills-chillsongs" role="tabpanel" aria-labelledby="pills-chillsongs-tab">
+            <div class="row">
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/chill1.jpeg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Kabira</h5>
+                    <p class="card-text">Arijit Singh, Harshdeep Kaur</p>
+                    <a href="https://www.jiosaavn.com/song/kabira/MxEeByVxGnA" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/chill2.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Ashiyaan</h5>
+                    <p class="card-text">Nikhil Paul George, Shreya Ghoshal, Pritam Chakraborty</p>
+                    <a href="https://www.jiosaavn.com/song/aashiyan/HhEEfUZ3XV8" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/chill3.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Jo Tum Mere Ho</h5>
+                    <p class="card-text">Anuv Jain</p>
+                    <a href="https://www.jiosaavn.com/song/jo-tum-mere-ho/CiYvbiZbcnc" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/chill4.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Pehle bhi Main</h5>
+                    <p class="card-text">Vishal Mishra, Raj Shekhar</p>
+                    <a href="https://www.jiosaavn.com/song/pehle-bhi-main/QQ1bdBoHbms" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/chill5.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Hua Mein</h5>
+                    <p class="card-text">Raghav Chaitanya, Pritam Chakraborty</p>
+                    <a href="https://www.jiosaavn.com/song/hua-main/Fl8HXENfU1c" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- More Song Cards can follow... -->
+            </div>
+          </div>
+
+          <!-- rock Songs Tab -->
+          <div class="tab-pane fade" id="pills-rocksongs" role="tabpanel" aria-labelledby="pills-rocksongs-tab">
+            <div class="row">
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/rock1.jpeg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Bhaag D.K. Bose</h5>
+                    <p class="card-text">Ram Sampath</p>
+                    <a href="https://www.jiosaavn.com/song/bhaag-d.k.-bose-aandhi-aayi/QREIfhtkems" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/rock2.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Bulleya</h5>
+                    <p class="card-text">Pritam Chakraborty, Shilpa Rao, Amit Mishra</p>
+                    <a href="https://www.jiosaavn.com/song/bulleya/PwwDawxVVh4" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/rock3.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Zinda</h5>
+                    <p class="card-text">Siddharth Mahadevan</p>
+                    <a href="https://www.jiosaavn.com/song/zinda/Jh9eXTVbYWQ" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/rock4.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Pyaar Hota Kayi Baar hai</h5>
+                    <p class="card-text">Arijit Singh</p>
+                    <a href="https://www.jiosaavn.com/song/pyaar-hota-kayi-baar-hai/AB4,Vz1IWgo" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Song Card 1 -->
+              <div class="col-md-4 mb-4" data-aos="zoom-in">
+                <div class="card bg-dark text-white border-0 shadow-lg h-100">
+                  <img src="assets/rock5.jpg" class="card-img-top img-fluid" alt="Song Title" style="object-fit: cover; height: 200px;">
+                  <div class="card-body">
+                    <h5 class="card-title text-success">Tum Se</h5>
+                    <p class="card-text">Varun Jain, Sachin–Jigar, Raghav Chaitanya</p>
+                    <a href="https://www.jiosaavn.com/song/tum-se/HRwsfTF3bko" class="btn btn-success btn-sm">Play</a>
+                  </div>
+                </div>
+              </div>
+          <!-- Other Tabs for Sad Songs, Chill Songs, and Rock Songs follow similar structure -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-black text-center">
+    <p class="text-gray-400">&copy; 2024 Bollywood Beats. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

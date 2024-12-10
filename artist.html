@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Categories | Bollywood Beats</title>
+  <link rel="icon" href="assets/title.png" type="image/icon type">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="home.css">
+  <style>
+    .nav-link.active {
+      background-color: #1DB954; /* Spotify Green */
+    }
+    
+    .nav-pills .nav-link {
+      border-radius: 50px;
+      margin: 0 5px;
+    }
+    
+    .tabs {
+      margin-bottom: 30px;
+    }
+    
+    /* Styling for the tab content */
+    .tab-pane {
+      background-color: #121212; /* Dark background for content */
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .tab-pane h3 {
+      font-size: 2rem;
+      color: #1DB954; /* Spotify Green */
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .tab-pane p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .tab-pane img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    /* AOS Styling */
+    [data-aos="fade-up"] {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Enhance the navigation */
+    .nav-pills .nav-link {
+      background-color: #333;
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      border-radius: 50px;
+      margin: 0 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-pills .nav-link:hover {
+      background-color: #1DB954; /* Hover effect for green color */
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: #1DB954; /* Active tab background */
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .tab-pane h3 {
+        font-size: 1.8rem;
+      }
+
+      .tab-pane p {
+        font-size: 1rem;
+      }
+    }
+
+    .spotify-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #1DB954; /* Spotify Green */
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 50px;
+        margin-top: 10px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+      }
+    
+      .spotify-btn i {
+        margin-right: 8px; /* Adds space between icon and text */
+        font-size: 1.5rem; /* Adjusts the icon size */
+      }
+    
+      .spotify-btn:hover {
+        background-color: #1ED760; /* Hover effect for lighter green */
+        transform: translateY(-3px); /* Slight lift effect on hover */
+      }
+    
+      .spotify-btn:active {
+        background-color: #1AA34A; /* Darker green on click */
+        transform: translateY(1px); /* Pressed effect */
+      }
+
+      .divider {
+        border-top: 2px solid #ddd;
+        margin: 20px 0;
+    }
+    /* General resets */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    /* Navbar */
+    @media (max-width: 768px) {
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 10px 0;
+      }
+  
+      nav a:hover {
+        color: #64ffda;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <nav class="bg-green-800 shadow-md">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <a href="#" class="text-2xl font-bold text-white">Bollywood Beats</a>
+      <ul class="flex space-x-6">
+        <li><a href="home.html" class="hover:text-green-400">Home</a></li>
+        <li><a href="categories.html" class="hover:text-green-400">Categories</a></li>
+        <li><a href="artist.html" class="hover:text-green-400">Artists</a></li>
+        <li><a href="about-as.html" class="hover:text-green-400">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Artist Categories Tabs -->
+  <section class="py-20" id="categories">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center text-white mb-12" data-aos="fade-down">Music is the universal language, and the singer is the voice that speaks to the soul.</h2>
+      
+      <div class="tabs">
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-lata-tab" data-bs-toggle="pill" href="#pills-lata" role="tab" aria-controls="pills-lata" aria-selected="true">Lata Mangeshkar</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-kishore-tab" data-bs-toggle="pill" href="#pills-kishore" role="tab" aria-controls="pills-kishore" aria-selected="false">Kishore Kumar</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-arijit-tab" data-bs-toggle="pill" href="#pills-arijit" role="tab" aria-controls="pills-arijit" aria-selected="false">Arijit Singh</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-shreya-tab" data-bs-toggle="pill" href="#pills-shreya" role="tab" aria-controls="pills-shreya" aria-selected="false">Shreya Ghoshal</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-atif-tab" data-bs-toggle="pill" href="#pills-atif" role="tab" aria-controls="pills-atif" aria-selected="false">Atif Aslam</a>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-lata" role="tabpanel" aria-labelledby="pills-lata-tab">
+              <div data-aos="fade-up" class="p-6 md:p-10 bg-black bg-opacity-80 text-white rounded-lg shadow-lg">
+                <!-- Title Section -->
+                <h3 class="text-xl md:text-3xl font-bold mb-4 text-green-400">Lata Mangeshkar</h3>
+                <p class="mb-6 text-gray-300 leading-relaxed md:leading-snug">
+                  Lata Mangeshkar, often referred to as the <strong>"Nightingale of India,"</strong> was a legendary Indian playback singer and one of the most iconic figures in Indian music. Her career spanned over seven decades, and she is celebrated for her melodious voice, remarkable range, and significant contribution to Indian cinema and music.
+                </p>
+              
+                <!-- Divider -->
+                <div class="h-px bg-gray-700 my-6"></div>
+              
+                <!-- Early Life Section -->
+                <h4 class="text-lg md:text-xl font-semibold text-green-400 mt-4">Early Life</h4>
+                <ul class="list-disc pl-6 mb-6 text-gray-300 space-y-2">
+                  <li><strong>Birth</strong>: Lata Mangeshkar was born on <strong>September 28, 1929</strong> in <strong>Indore, Madhya Pradesh</strong>, India.</li>
+                  <li><strong>Parents</strong>: Her father, <strong>Pandit Deenanath Mangeshkar</strong>, was a classical singer and theater actor.</li>
+                  <li><strong>Siblings</strong>: Lata was the eldest of five siblings, including singers <strong>Asha Bhosle</strong>.</li>
+                  <li><strong>Education</strong>: She received training in classical music from her father.</li>
+                </ul>
+              
+                <!-- Divider -->
+                <div class="h-px bg-gray-700 my-6"></div>
+              
+                <!-- Career Highlights Section -->
+                <h4 class="text-lg md:text-xl font-semibold text-green-400 mt-4">Career Highlights</h4>
+                <ol class="list-decimal pl-6 mb-6 text-gray-300 space-y-2">
+                  <li><strong>Debut</strong>: Lata began her career at a very young age to support her family after her father's death.</li>
+                  <li><strong>Breakthrough</strong>: In 1949, she gained nationwide recognition with the song <i>"Aayega Aanewala"</i> from the Hindi film <i>Mahal</i>.</li>
+                  <li><strong>Range and Versatility</strong>: Sang in over <strong>36 Indian languages</strong> and several foreign languages.</li>
+                  <li><strong>Iconic Songs</strong>:
+                    <ul class="ml-4 text-gray-400">
+                      <li><i>"Pyar Kiya To Darna Kya"</i> (<i>Mughal-e-Azam</i>)</li>
+                      <li><i>"Lag Ja Gale"</i> (<i>Woh Kaun Thi?</i>)</li>
+                    </ul>
+                  </li>
+                </ol>
+              
+                <!-- Divider -->
+                <div class="h-px bg-gray-700 my-6"></div>
+              
+                <!-- Awards Section -->
+                <h4 class="text-lg md:text-xl font-semibold text-green-400 mt-4">Awards and Recognitions</h4>
+                <ul class="list-disc pl-6 mb-6 text-gray-300 space-y-2">
+                  <li><strong>Bharat Ratna</strong>: Received India's highest civilian honor in 2001.</li>
+                  <li><strong>Padma Bhushan</strong>: Awarded in 1969, <strong>Padma Vibhushan</strong> followed in 1999.</li>
+                  <li><strong>Dadasaheb Phalke Award</strong>: Won in 1989 for her immense contribution to Indian cinema.</li>
+                </ul>
+              
+                <!-- Divider -->
+                <div class="h-px bg-gray-700 my-6"></div>
+              
+                <!-- Personal Life & Legacy -->
+                <h4 class="text-lg md:text-xl font-semibold text-green-400 mt-4">Personal Life and Legacy</h4>
+                <ul class="list-disc pl-6 mb-6 text-gray-300 space-y-2">
+                  <li>Lata Mangeshkar dedicated her life to music and inspired countless generations of singers.</li>
+                  <li>Her humility and philanthropy have left an indelible mark on Indian society.</li>
+                </ul>
+              
+                <!-- Divider -->
+                <div class="h-px bg-gray-700 my-6"></div>
+              
+                <!-- Cultural Impact Section -->
+                <h4 class="text-lg md:text-xl font-semibold text-green-400 mt-4">Cultural Impact</h4>
+                <p class="text-gray-300 leading-relaxed md:leading-snug mb-6">
+                  Lata Mangeshkar's voice became an integral part of Indian cultural identity. Her contributions to music and cinema were unparalleled, and she continues to be celebrated as one of the greatest singers in the history of Indian music.
+                </p>
+              
+                <!-- Image Section -->
+                <div class="text-center my-6">
+                  <img src="assets/lata.jpg" alt="Lata Mangeshkar" class="rounded-lg shadow-lg w-3/4 md:w-1/2 transition-transform transform hover:scale-105 duration-300">
+                </div>
+              
+                <!-- Spotify Icon Link -->
+                <div class="text-center mt-4">
+                  <p class="text-gray-300">Listen to iconic songs
+                    <a href="https://www.jiosaavn.com/artist/lata-mangeshkar-songs/FCtl69DObYg_" class="text-green-400 hover:text-green-600 transition duration-300">
+                       Click Here! <i class="fa-solid fa-music"></i>
+                    </a>
+                  </p>
+                </div>
+              </div>
+              
+              </div>
+              
+          <div class="tab-pane fade" id="pills-kishore" role="tabpanel" aria-labelledby="pills-kishore-tab">
+            <div data-aos="fade-up" class="bg-black text-white py-6 px-4 md:px-12 lg:px-24 rounded-lg shadow-lg">
+              <!-- Section Header -->
+              <div class="text-center">
+                <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-[#1DB954]">Kishore Kumar</h3>
+                <p class="text-gray-300 leading-relaxed md:text-lg lg:text-xl">
+                  <strong>Kishore Kumar</strong>, born <strong>Abhas Kumar Ganguly</strong>, was one of India's most versatile and legendary playback singers, actors, composers, and filmmakers. Known for his unique voice and unparalleled ability to adapt to various musical styles, Kishore Kumar remains an icon in Indian cinema and music.
+                </p>
+              </div>
+            
+              <div class="divider mt-6 mb-6 bg-[#1DB954] h-1 rounded-full"></div>
+            
+              <!-- Early Life Section -->
+              <h4 class="text-lg font-semibold mt-4 text-[#1DB954]">Early Life</h4>
+              <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                <li><strong>Birth:</strong> Kishore Kumar was born on <strong>August 4, 1929</strong>, in <strong>Khandwa, Madhya Pradesh</strong>, India.</li>
+                <li><strong>Family:</strong>
+                  <ul class="list-inside pl-4 space-y-1">
+                    <li>Youngest of four siblings, with elder brothers <strong>Ashok Kumar</strong> and Anoop Kumar.</li>
+                    <li>Parents: <strong>Kunjalal Ganguly</strong> (lawyer) and <strong>Gouri Devi</strong> (homemaker).</li>
+                  </ul>
+                </li>
+                <li><strong>Education:</strong> Completed schooling in Khandwa and later moved to Mumbai.</li>
+              </ul>
+            
+              <div class="divider mt-6 mb-6 bg-[#1DB954] h-1 rounded-full"></div>
+            
+              <!-- Career Highlights Section -->
+              <h4 class="text-lg font-semibold mt-4 text-[#1DB954]">Career Highlights</h4>
+              <ol class="list-decimal pl-6 space-y-3 text-gray-300">
+                <li><strong>Debut:</strong>
+                  <ul class="list-inside pl-4 space-y-1">
+                    <li>First playback song: <em>"Marne Ki Duayen Kyon Mangu"</em> for <em>Ziddi</em> (1948), composed by Khemchand Prakash.</li>
+                    <li>Inspired by singer-actor <strong>K.L. Saigal</strong>.</li>
+                  </ul>
+                </li>
+                <li><strong>Breakthrough:</strong> 1969 film <em>Aradhana</em> with iconic songs like <em>"Mere Sapno Ki Rani"</em> and <em>"Roop Tera Mastana"</em>.</li>
+                <li><strong>Signature Hits:</strong>
+                  <ul class="list-inside pl-4 space-y-1">
+                    <li><em>"Yeh Shaam Mastani"</em></li>
+                    <li><em>"Zindagi Ek Safar Hai Suhana"</em></li>
+                    <li><em>"Tere Bina Zindagi Se"</em></li>
+                    <li><em>"O Saathi Re"</em></li>
+                    <li><em>"Aanewala Pal"</em></li>
+                    <li><em>"Humein Tumse Pyar Kitna"</em></li>
+                  </ul>
+                </li>
+              </ol>
+            
+              <div class="divider mt-6 mb-6 bg-[#1DB954] h-1 rounded-full"></div>
+            
+              <!-- Acting Career Section -->
+              <h4 class="text-lg font-semibold mt-4 text-[#1DB954]">Acting Career</h4>
+              <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                <li><strong>Debut:</strong> Acting debut in <em>Shikari</em> (1946).</li>
+                <li><strong>Comedy and Style:</strong> Known for quirky style and comedic timing in films like <em>Chalti Ka Naam Gaadi</em> (1958) and <em>Padosan</em> (1968).</li>
+                <li><strong>Filmmaker:</strong> Directed films like <em>Jhumroo</em> (1961) and <em>Door Gagan Ki Chhaon Mein</em> (1964).</li>
+              </ul>
+            
+              <div class="divider mt-6 mb-6 bg-[#1DB954] h-1 rounded-full"></div>
+            
+              <!-- Awards Section -->
+              <h4 class="text-lg font-semibold mt-4 text-[#1DB954]">Awards and Recognitions</h4>
+              <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                <li><strong>Filmfare Awards:</strong> Won <strong>8 Filmfare Awards for Best Male Playback Singer</strong>, a record.</li>
+                <li><strong>Posthumous Honors:</strong> Received the <strong>Lata Mangeshkar Award</strong> from the Madhya Pradesh government.</li>
+              </ul>
+            
+              <div class="divider mt-6 mb-6 bg-[#1DB954] h-1 rounded-full"></div>
+            
+              <!-- Image Section -->
+              <div class="text-center mt-4">
+                <img src="assets/kishore-kumar.jpg" alt="Kishore Kumar" class="rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out">
+              </div>
+            
+              <div class="text-center mt-4">
+                <p class="text-gray-300">Listen to iconic songs
+                  <a href="https://www.jiosaavn.com/artist/kishore-kumar-songs/yMoPyl3ZzyY_" class="text-green-400 hover:text-green-600 transition duration-300">
+                     Click Here! <i class="fa-solid fa-music"></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+            
+          </div>
+          <div class="tab-pane fade" id="pills-arijit" role="tabpanel" aria-labelledby="pills-arijit-tab">
+            <div data-aos="fade-up">
+              <!-- Arijit Singh Section -->
+              <h3 class="text-xl font-bold">Arijit Singh</h3>
+              <p>
+                <strong>Arijit Singh</strong> is one of India's most celebrated playback singers, known for his soulful voice and versatile singing style. 
+                He has made an indelible mark in Bollywood and Indian music with numerous chart-topping hits across multiple languages.
+              </p>
+            
+              <!-- Early Life Section -->
+              <h4 class="text-lg font-semibold mt-4">Early Life</h4>
+              <ul class="list-disc pl-6">
+                <li><strong>Birth:</strong> Arijit Singh was born on <strong>April 25, 1987</strong>, in <strong>Jiaganj, Murshidabad</strong>, West Bengal, India.</li>
+                <li><strong>Family:</strong>
+                  <ul>
+                    <li>His father is a Punjabi, while his mother was Bengali.</li>
+                    <li>He comes from a musically inclined family—his grandmother was a classical singer, and his mother played the tabla.</li>
+                  </ul>
+                </li>
+                <li><strong>Education:</strong>
+                  <ul>
+                    <li>He attended Raja Bijay Singh High School and Sripat Singh College in Murshidabad.</li>
+                    <li>Arijit trained in classical music under <strong>Rajendra Prasad Hazari</strong>, and later learned tabla from <strong>Dhirendra Prasad Hazari</strong> and Rabindra Sangeet from <strong>Birendra Prasad Hazari</strong>.</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <div class="divider"></div>
+            
+              <!-- Career Highlights Section -->
+              <h4 class="text-lg font-semibold mt-4">Career Highlights</h4>
+              <ol class="list-decimal pl-6">
+                <li><strong>Reality Show Journey:</strong>
+                  <ul>
+                    <li>Arijit began his career by participating in the reality show <em>Fame Gurukul</em> in 2005. Although he did not win, his talent caught the attention of filmmaker Sanjay Leela Bhansali and composer Pritam.</li>
+                    <li>He later participated in another reality show, <em>10 Ke 10 Le Gaye Dil</em>, which he won.</li>
+                  </ul>
+                </li>
+                <li><strong>Background and Training:</strong>
+                  <ul>
+                    <li>After the shows, Arijit worked as a music programmer and arranger for prominent composers like <strong>Shankar-Ehsaan-Loy</strong>, <strong>Vishal-Shekhar</strong>, and <strong>Pritam</strong>.</li>
+                  </ul>
+                </li>
+              </ol>
+            
+              <div class="divider"></div>
+            
+              <!-- Breakthrough Section -->
+              <h4 class="text-lg font-semibold mt-4">Breakthrough in Bollywood</h4>
+              <ol class="list-disc pl-6">
+                <li><strong>Debut:</strong> Arijit's Bollywood singing debut was the song <em>"Phir Mohabbat"</em> from the movie <em>Murder 2</em> (2011).</li>
+                <li><strong>Rise to Fame:</strong> The 2013 song <em>"Tum Hi Ho"</em> from <em>Aashiqui 2</em> catapulted him to stardom. The song earned him numerous accolades and a massive fan following.</li>
+                <li><strong>Signature Style:</strong> Known for his emotive singing, Arijit's ability to express intense feelings through his voice has made him a favorite for romantic, melancholic, and soulful tracks.</li>
+                <li><strong>Versatility:</strong> He has sung in a variety of genres, including romantic (<em>"Channa Mereya"</em>), dance numbers (<em>"Badtameez Dil"</em>), and Sufi-inspired songs (<em>"Aayat"</em>).</li>
+              </ol>
+            
+              <div class="divider"></div>
+            
+              <!-- Regional Music Section -->
+              <h4 class="text-lg font-semibold mt-4">Regional Music</h4>
+              <p>In addition to Hindi, Arijit has sung in multiple Indian languages, including Bengali, Tamil, Telugu, Kannada, and Marathi.</p>
+            
+              <div class="divider"></div>
+            
+              <!-- Popular Songs Section -->
+              <h4 class="text-lg font-semibold mt-4">Popular Songs</h4>
+              <ul class="list-disc pl-6">
+                <li><strong>Romantic Hits:</strong>
+                  <ul>
+                    <li><em>"Tum Hi Ho"</em> (<em>Aashiqui 2</em>)</li>
+                    <li><em>"Channa Mereya"</em> (<em>Ae Dil Hai Mushkil</em>)</li>
+                    <li><em>"Raabta"</em> (<em>Agent Vinod</em>)</li>
+                    <li><em>"Jeene Laga Hoon"</em> (<em>Ramaiya Vastavaiya</em>)</li>
+                  </ul>
+                </li>
+                <li><strong>Melancholic Songs:</strong>
+                  <ul>
+                    <li><em>"Agar Tum Saath Ho"</em> (<em>Tamasha</em>)</li>
+                    <li><em>"Tera Yaar Hoon Main"</em> (<em>Sonu Ke Titu Ki Sweety</em>)</li>
+                  </ul>
+                </li>
+                <li><strong>Dance Numbers:</strong>
+                  <ul>
+                    <li><em>"Badtameez Dil"</em> (<em>Yeh Jawaani Hai Deewani</em>)</li>
+                    <li><em>"Nashe Si Chadh Gayi"</em> (<em>Befikre</em>)</li>
+                  </ul>
+                </li>
+                <li><strong>Regional Hits:</strong>
+                  <ul>
+                    <li><em>"Mon Majhi Re"</em> (Bengali)</li>
+                    <li><em>"Kannamma"</em> (Tamil)</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <div class="divider"></div>
+            
+              <!-- Personal Life Section -->
+              <h4 class="text-lg font-semibold mt-4">Personal Life</h4>
+              <ul class="list-disc pl-6">
+                <li><strong>Marriage:</strong> Arijit married his childhood friend Koel Roy in 2014. The couple has children and leads a private life.</li>
+                <li><strong>Philanthropy:</strong> Arijit is actively involved in charity, supporting various causes through his earnings and resources.</li>
+                <li><strong>Hobbies:</strong> Apart from music, he enjoys cycling, reading, and traveling.</li>
+              </ul>
+            
+              <div class="divider"></div>
+            
+              <!-- Awards & Legacy Section -->
+              <h4 class="text-lg font-semibold mt-4">Awards and Recognitions</h4>
+              <ul class="list-disc pl-6">
+                <li><strong>Filmfare Awards:</strong> Won multiple awards, including Best Male Playback Singer for <em>"Tum Hi Ho"</em> and <em>"Channa Mereya"</em>.</li>
+                <li><strong>National Recognition:</strong> Honored with several awards, including IIFA, Zee Cine Awards, and Screen Awards.</li>
+                <li><strong>Streaming Success:</strong> Arijit is one of the most-streamed Indian artists on platforms like Spotify and JioSaavn.</li>
+              </ul>
+            
+              <div class="divider"></div>
+            
+              <h4 class="text-lg font-semibold mt-4">Legacy</h4>
+              <ul>
+                <li><strong>Impact on Music:</strong> Often compared to legends like Kishore Kumar and Mohammed Rafi, Arijit is considered one of the greatest playback singers of his generation.</li>
+                <li><strong>Global Reach:</strong> His songs are cherished by fans worldwide, transcending language and cultural barriers.</li>
+                <li><strong>Evergreen Voice:</strong> With his unmatched voice and dedication to music, Arijit continues to inspire aspiring singers and touch millions of hearts.</li>
+              </ul>
+            
+              <div class="divider"></div>
+            
+              <img src="assets/arjit.avif" alt="Arijit Singh" class="img-fluid">
+            
+              <div class="text-center mt-4">
+                <p class="text-gray-300">Listen to iconic songs
+                  <a href="https://www.jiosaavn.com/artist/arijit-singh-songs/LlRWpHzy3Hk_" class="text-green-400 hover:text-green-600 transition duration-300">
+                     Click Here! <i class="fa-solid fa-music"></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+            
+          </div>
+          <div class="tab-pane fade" id="pills-shreya" role="tabpanel" aria-labelledby="pills-shreya-tab">
+            <div data-aos="fade-up">
+              <h3 class="text-xl font-bold">Shreya Ghoshal</h3>
+              <p><strong>Shreya Ghoshal</strong> is one of India's most versatile and renowned playback singers, known for her melodious voice and exceptional singing talent. With a career spanning over two decades, she has become a household name in the Indian music industry and has a massive fan base worldwide.</p>
+
+              <h4 class="text-lg font-semibold mt-4">Early Life</h4>
+                  <ul class="list-disc pl-6">
+                    <li><strong>Birth:</strong> Shreya Ghoshal was born on <strong>March 12, 1984</strong>, in <strong>Murshidabad, West Bengal</strong>, India.</li>
+                    <li><strong>Family:</strong>
+                        <ul>
+                            <li>Her father, <strong>Biswajit Ghoshal</strong>, is an electrical engineer who worked for the Nuclear Power Corporation of India.</li>
+                            <li>Her mother, <strong>Sarmistha Ghoshal</strong>, is a homemaker and a literature enthusiast.</li>
+                            <li>The family moved to Rawatbhata, Rajasthan, where Shreya spent most of her childhood.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Education:</strong>
+                        <ul>
+                            <li>Shreya attended Atomic Energy Central School in Rawatbhata.</li>
+                            <li>She later graduated in Arts with a major in English from SIES College of Arts, Science, and Commerce in Mumbai.</li>
+                        </ul>
+                    </li>
+                    </ul>
+
+                    <div class="divider"></div>
+
+                    <h4 class="text-lg font-semibold mt-4">Musical Training</h4>
+                    <p>Shreya began learning music at the age of four under her mother’s guidance. She later trained in Hindustani classical music under <strong>Mahesh Chandra Sharma</strong> in Kota, Rajasthan. At the age of six, she started formal classical music training. She won the <strong>All India Light Vocal Music Competition</strong> in 1995, organized by Sangam Kala Group in New Delhi.</p>
+
+                    <div class="divider"></div>
+              
+                  <h4 class="text-lg font-semibold mt-4">Career Highlights</h4>
+                  <ol class="list-decimal pl-6">
+                    <li><strong>Reality Show Success:</strong>
+                    <ul>
+                        <li>Shreya gained national attention by winning the music reality show <em>Sa Re Ga Ma Pa</em> in 2000 when she was just 16 years old.</li>
+                        <li>Her performance impressed filmmaker Sanjay Leela Bhansali, who offered her the opportunity to sing in his film.</li>
+                    </ul>
+                </li>
+                <li><strong>Bollywood Debut:</strong>
+                    <ul>
+                        <li>Shreya made her Bollywood playback singing debut with <em>"Bairi Piya"</em> from the movie <em>Devdas</em> (2002), directed by Sanjay Leela Bhansali.</li>
+                        <li>The song became an instant hit, earning her a National Film Award and a Filmfare Award for Best Female Playback Singer.</li>
+                    </ul>
+                </li>
+                  </ol>
+
+                  <div class="divider"></div>
+
+                  <h4 class="text-lg font-semibold mt-4">Success in Playback Singing</h4>
+                  <ol class="list-disc pl-6">
+                    <li><strong>Versatility:</strong> Shreya has sung in a wide range of genres, including romantic songs (<em>"Teri Ore"</em>), classical (<em>"O Rangrez"</em>), peppy numbers (<em>"Chikni Chameli"</em>), and devotional songs (<em>"Jaadu Hai Nasha Hai"</em>).</li>
+                    <li><strong>Languages:</strong> Apart from Hindi, Shreya has sung in over 20 Indian languages, including Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, and Punjabi.</li>
+                    <li><strong>Popular Bollywood Songs:</strong>
+                        <ul>
+                            <li><em>"Teri Meri"</em> (<em>Bodyguard</em>)</li>
+                            <li><em>"Sun Raha Hai"</em> (<em>Aashiqui 2</em>)</li>
+                            <li><em>"Deewani Mastani"</em> (<em>Bajirao Mastani</em>)</li>
+                            <li><em>"Agar Tum Mil Jao"</em> (<em>Zeher</em>)</li>
+                            <li><em>"Piyu Bole"</em> (<em>Parineeta</em>)</li>
+                        </ul>
+                    </li>
+                  </ol>
+                  
+                  <div class="divider"></div>
+
+                  <h4 class="text-lg font-semibold mt-4">Personal Life</h4>                  
+                  <ul class="list-disc pl-6">
+                    <li><strong>Marriage:</strong> Shreya married her childhood friend <strong>Shiladitya Mukhopadhyaya</strong>, an entrepreneur, on February 5, 2015, in a private ceremony.</li>
+                    <li><strong>Motherhood:</strong> The couple welcomed their son, <strong>Devyaan Mukhopadhyaya</strong>, in 2021.</li>
+                </ul>
+
+                <div class="divider"></div>
+
+                  <h4 class="text-lg font-semibold mt-4">Awards and Achievements</h4>
+                  <ul class="list-disc pl-6">
+                    <li><strong>National Film Awards:</strong> Won 4 National Film Awards for her exceptional contributions to playback singing.</li>
+                    <li><strong>Filmfare Awards:</strong> Recipient of multiple Filmfare Awards, including the Filmfare RD Burman Award for New Music Talent.</li>
+                    <li><strong>State Awards:</strong> Honored with numerous state awards for her songs in regional films.</li>
+                    <li><strong>Global Recognition:</strong> Shreya Ghoshal was included in Forbes India's "Top 100 Celebrities" list multiple times and was the first Indian singer to have a wax figure at Madame Tussauds Museum in Delhi.</li>
+                    
+            </ul>
+                 
+            <div class="divider"></div>
+
+                  <h4 class="text-lg font-semibold mt-4">Notable Collaborations</h4>
+                  <p>Shreya has worked with top composers like <strong>A.R. Rahman</strong>, <strong>Pritam</strong>, <strong>Vishal-Shekhar</strong>, <strong>Shankar-Ehsaan-Loy</strong>, and <strong>M.M. Keeravani</strong>. She has also sung duets with renowned singers like Sonu Nigam, Arijit Singh, Udit Narayan, and SP Balasubrahmanyam.</p>
+
+                  <div class="divider"></div>
+
+                  <h4 class="text-lg font-semibold mt-4">Awards and Recognitions</h4>
+                  <ul class="list-disc pl-6">
+                    <li><strong>Filmfare Awards</strong>: Won multiple awards, including Best Male Playback Singer for <em>"Tum Hi Ho"</em> (<em>Aashiqui 2</em>) and <em>"Channa Mereya"</em> (<em>Ae Dil Hai Mushkil</em>).</li>
+                    <li><strong>National Recognition</strong>: Honored with several awards, including IIFA, Zee Cine Awards, and Screen Awards.</li>
+                    <li><strong>Streaming Success</strong>: Arijit is one of the most-streamed Indian artists on platforms like Spotify and JioSaavn.</li>
+                  </ul>
+              
+                  <div class="divider"></div>
+
+                  <h4 class="text-lg font-semibold mt-4">Legacy</h4>
+                  <ul class="list-disc pl-6">
+                    <li><strong>Charity Work:</strong> Shreya is actively involved in various charitable causes, including education for underprivileged children and animal welfare.</li>
+                    <li><strong>Influence on Music:</strong> Known as the “Melody Queen of India,” Shreya has inspired a generation of young singers with her dedication and artistry.</li>
+                </ul>
+
+                <div class="divider"></div>
+
+                <h4 class="text-lg font-semibold mt-4">Fun Facts</h4>
+                <ul class="list-disc pl-6">
+                  <li>Shreya's first recorded song was in the Bhojpuri language when she was just six years old.</li>
+                  <li>She enjoys cooking, traveling, and reading in her leisure time.</li>
+                  <li>Shreya is a devoted fan of Lata Mangeshkar and considers her the greatest influence on her singing career.</li>
+              </ul>
+
+              <div class="divider"></div>
+
+
+                  <img src="assets/shreya.webp" alt="Lata Mangeshkar" class="img-fluid">
+
+                  <div class="text-center mt-4">
+                    <p class="text-gray-300">Listen to iconic songs
+                      <a href="https://www.jiosaavn.com/artist/shreya-ghoshal-songs/lIHlwHaxTZ0_" class="text-green-400 hover:text-green-600 transition duration-300">
+                         Click Here! <i class="fa-solid fa-music"></i>
+                      </a>
+                    </p>
+                  </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-atif" role="tabpanel" aria-labelledby="pills-atif-tab">
+            <div data-aos="fade-up">
+              <h3 class="text-xl font-bold">Atif Aslam</h3>
+              <p>Atif Aslam is a Pakistani playback singer who has gained immense popularity in Bollywood, known for his deep and soulful voice, which has charmed music lovers across the globe.</p>
+
+              <h4 class="text-lg font-semibold mt-4">Early Life</h4>
+                  <ul class="list-disc pl-6">
+                    <li><strong>Birth:</strong> Born on <strong>March 12, 1983</strong>, in <strong>Wazirabad, Punjab, Pakistan</strong>.</li>
+                    <li><strong>Family:</strong> Grew up in a middle-class Punjabi family, living in Lahore and Rawalpindi.</li>
+                    <li><strong>Education:</strong>
+                        <ul>
+                            <li>Attended Kimberley Hall School in Lahore and Divisional Public School in Rawalpindi.</li>
+                            <li>Graduated from Punjab College, Lahore, with a degree in Computer Science.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hobbies:</strong> Initially aspired to become a professional cricketer and played as a fast bowler at the school level.</li>
+                </ul>
+                
+                <div class="divider"></div>
+                  <h3 class="text-lg font-semibold mt-4">Musical Career</h3>
+                  <h4 class="text-lg font-semibold mt-4">Early Beginning</h4>
+                    <p>Atif discovered his singing talent during college. Encouraged by friends, he first performed at a college farewell event, marking the beginning of his musical journey.</p>
+                    <h4 class="text-lg font-semibold mt-4">Rise to stardom</h4>
+                    <ul>
+                      <li><strong>Jal Band:</strong>
+                      <ul>
+                          <li>Started with the band <em>Jal</em> and recorded the iconic song <strong>"Aadat"</strong> in 2003.</li>
+                          <li>Gained massive popularity but eventually pursued a solo career.</li>
+                      </ul>
+                  </li>
+                  <li><strong>Debut Album:</strong>
+                      <ul>
+                          <li>Released his first solo album, <em>Jal Pari</em> (2004), featuring hits like "Bheegi Yaadein," "Ehsaas," and "Mahi Ve."</li>
+                      </ul>
+                  </li>
+                    </ul>
+
+                    <div class="divider"></div>
+                  <h4 class="text-lg font-semibold mt-4">Bollywood Success</h4>
+                  <ul class="list-disc pl-6">
+                    <li><strong>Notable Bollywood Songs:</strong>
+                    <ul>
+                        <li><em>"Tera Hone Laga Hoon"</em> (<em>Ajab Prem Ki Ghazab Kahani</em>)</li>
+                        <li><em>"Tu Jaane Na"</em> (<em>Ajab Prem Ki Ghazab Kahani</em>)</li>
+                        <li><em>"Jeene Laga Hoon"</em> (<em>Ramaiya Vastavaiya</em>)</li>
+                        <li><em>"Tera Ban Jaunga"</em> (<em>Kabir Singh</em>)</li>
+                        <li><em>"Pehli Nazar Mein"</em> (<em>Race</em>)</li>
+                        <li><em>"Dil Diyan Gallan"</em> (<em>Tiger Zinda Hai</em>)</li>
+                    </ul>
+                </li>
+                  </ul>
+                  
+                  <div class="divider"></div>
+                  <h4 class="text-lg font-semibold mt-4">Personal Life</h4>                  
+                  <ul class="list-disc pl-6">
+                    <li><strong>Marriage:</strong> Married his longtime partner <strong>Sara Bharwana</strong>, an educationist, in 2013.</li>
+                    <li><strong>Children:</strong> The couple has two sons.</li>
+                    <li><strong>Personality:</strong> Known for his humility and grounded nature despite his immense fame.</li>
+                </ul>
+
+                <div class="divider"></div>
+                  <h4 class="text-lg font-semibold mt-4">Awards and Achievements</h4>
+                  <ul class="list-disc pl-6">
+                    <li><strong>Lux Style Awards:</strong> Multiple wins for Best Singer.</li>
+                    <li><strong>Filmfare Nominations:</strong> Recognized for his contributions to Bollywood music.</li>
+                    <li><strong>Tamgha-e-Imtiaz:</strong> Received Pakistan's prestigious civilian award in 2008.</li>
+                    <li><strong>Global Fame:</strong> Known for sold-out concerts worldwide and a massive international fanbase.</li>
+                </ul>
+              
+                <div class="divider"></div>
+                  <h4 class="text-lg font-semibold mt-4">Legacy</h4>
+                  <p>Atif Aslam’s unique voice and emotive singing style have inspired countless aspiring musicians. His songs continue to resonate with fans across generations, solidifying his place as one of the most beloved artists in South Asia.</p>
+
+                  <div class="divider"></div>
+                  <p>Atif Aslam remains an icon of soulful music, bridging cultural gaps and bringing people together through his timeless melodies.</p>
+
+
+                  <img src="assets/atif.jpg" alt="Lata Mangeshkar" class="img-fluid">
+
+                  <div class="text-center mt-4">
+                    <p class="text-gray-300">Listen to iconic songs
+                      <a href="https://www.jiosaavn.com/artist/atif-aslam-songs/MXn8bhT308U_" class="text-green-400 hover:text-green-600 transition duration-300">
+                         Click Here! <i class="fa-solid fa-music"></i>
+                      </a>
+                    </p>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-black text-center">
+    <p class="text-gray-400">&copy; 2024 Bollywood Beats. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
